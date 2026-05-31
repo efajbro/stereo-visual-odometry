@@ -44,3 +44,56 @@ mkdir build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
 make -j$(nproc)
+
+## Execution
+
+The system provides two executable binaries for validation:
+
+**1. Real-World Optical Flow Validation**
+Processes an input video feed to validate the FAST+KLT tracking pipeline and Spatial Bucketing constraints.
+
+```bash
+./webcam_live
+
+```
+
+**2. Synthetic Pose Trajectory Mapping**
+Validates the geometric PnP solver by simulating a moving camera array and plotting the resulting top-down 2D coordinate trajectory.
+
+```bash
+./vo_test
+
+```
+
+## Repository Structure
+
+```text
+├── CMakeLists.txt
+├── README.md
+├── LICENSE
+├── .gitignore
+├── include/
+│   ├── feature_tracker.hpp
+│   ├── motion_estimator.hpp
+│   └── visual_odometry.hpp
+├── src/
+│   ├── feature_tracker.cpp
+│   ├── motion_estimator.cpp
+│   ├── triangulation.cpp
+│   └── visual_odometry.cpp
+└── tests/
+    ├── main.cpp
+    └── webcam_live.cpp
+
+```
+
+## Developer Information
+
+* **Name:** Efaj Hossain
+* **GitHub:** [ https://github.com/efajbro ]
+* **Contact:** info.efajbro@gmail.com
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
