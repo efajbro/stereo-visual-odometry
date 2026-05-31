@@ -45,6 +45,8 @@ cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
 make -j$(nproc)
 
+```
+
 ## Execution
 
 The system provides two executable binaries for validation:
